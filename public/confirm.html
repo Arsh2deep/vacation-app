@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card-container">
+    <header class="form-header">
+      <h1>Booking Details</h1>
+      <p>Your vacation inquiry has been successfully Booked!</p>
+    </header>
+
+    <div class="confirmation-details">
+      <p><strong>Destination:</strong> <span id="confDest">-</span></p>
+      <p><strong>Departure Date:</strong> <span id="confDate">-</span></p>
+      <p><strong>Travelers:</strong> <span id="confTravelers">-</span></p>
+    </div>
+
+    <a href="/" class="btn-link">Back to Search</a>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('confDest').textContent = params.get('destination') || 'N/A';
+    document.getElementById('confDate').textContent = params.get('date') || 'N/A';
+    document.getElementById('confTravelers').textContent = params.get('travelers') || 'N/A';
+  </script>
+</body>
+</html>

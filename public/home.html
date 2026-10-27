@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Dream Vacation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card-container">
+    <header class="form-header">
+      <h1>Book Your Dream Vacation</h1>
+      <p>Explore destinations around the world in just a few clicks.</p>
+    </header>
+
+    <form id="vacationForm" action="/api/book-vacation" method="POST" novalidate>
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <select id="destination" name="destination" required>
+          <option value="" disabled selected>Select a destination...</option>
+          <option value="Paris, France">Paris, France</option>
+          <option value="Bali, Indonesia">Bali, Indonesia</option>
+          <option value="Tokyo, Japan">Tokyo, Japan</option>
+          <option value="New york, USA">New York, USA</option>
+          <option value="Rome, Italy">Rome, Italy</option>
+        </select>
+        <span class="error-msg" id="destError">Please choose a destination.</span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="departureDate">Departure Date</label>
+          <input type="date" id="departureDate" name="departureDate" required>
+          <span class="error-msg" id="dateError">Please select a valid date.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="travelers">Number of Travelers</label>
+          <input type="number" id="travelers" name="travelers" min="1" max="10" value="1" required>
+          <span class="error-msg" id="travelerError">Enter 1 to 10 travelers.</span>
+        </div>
+      </div>
+
+      <button type="submit" id="submitBtn">Find My Vacation</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
